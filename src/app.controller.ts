@@ -2,6 +2,7 @@ import { Body, Controller, Get, Post } from '@nestjs/common';
 import { ApiBody, ApiTags } from '@nestjs/swagger';
 import { AppService } from './app.service';
 import { LoginDTO, RegisterInfoDTO } from './logical/user/user.dto';
+import { genUsers } from './schema/user';
 @ApiTags('user')
 @Controller()
 export class AppController {
@@ -12,9 +13,12 @@ export class AppController {
     return this.appService.getHello();
   }
 
-  @Post('register')
-  async register(@Body() body: RegisterInfoDTO) {
-    return await true;
+  @Get('register')
+  async register(
+    //@Body() body: RegisterInfoDTO
+  ) {
+    const data = await genUsers(5);
+    return data;
   }
 
   @Post('login')
