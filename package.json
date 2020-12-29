@@ -20,7 +20,8 @@
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
     "seed": "node dist/seeder",
-    "seed:refresh": "node dist/seeder --refresh"
+    "seed:refresh": "node dist/seeder --refresh",
+    "json-ts": "ts-node-dev --respawn src/quicktype"
   },
   "dependencies": {
     "@nestjs/common": "^7.5.1",
@@ -41,10 +42,12 @@
     "mongoose": "^5.11.8",
     "nestjs-redoc": "^2.1.1",
     "nestjs-seeder": "^0.2.0",
+    "quicktype-core": "^6.0.69",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
     "rxjs": "^6.6.3",
-    "swagger-ui-express": "^4.1.6"
+    "swagger-ui-express": "^4.1.6",
+    "ts-node-dev": "^1.1.1"
   },
   "devDependencies": {
     "@nestjs/cli": "^7.5.1",
